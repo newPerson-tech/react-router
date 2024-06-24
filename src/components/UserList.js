@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import User from "./User";
-import "./UserList.css";
+import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -13,11 +12,15 @@ const UserList = () => {
   }, []);
 
   return (
-    <div className="user-list">
+    <div>
       <h1>User List</h1>
-      {users.map((user) => (
-        <User key={user.id} user={user} />
-      ))}
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            {user.name} - <Link to={`/albums/${user.id}`}>Albums</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

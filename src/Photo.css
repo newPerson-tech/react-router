@@ -1,9 +1,0 @@
-.photo {
-  display: inline-block;
-  margin-right: 10px;
-  text-align: center;
-}
-.photo img {
-  max-width: 100px;
-  display: block;
-}

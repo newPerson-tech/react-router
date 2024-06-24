@@ -1,12 +1,20 @@
 import React from "react";
-import UserList from "./UserList";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UsersPage from "./pages/UsersPage";
+import AlbumsPage from "./pages/AlbumsPage";
+import PhotosPage from "./pages/PhotosPage";
 
 const App = () => {
   return (
-    <div className="App">
-      <UserList />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<UsersPage />} />
+          <Route path="/albums/:userId" element={<AlbumsPage />} />
+          <Route path="/photos/:albumId" element={<PhotosPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
